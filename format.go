@@ -74,7 +74,7 @@ func AppendFormat(buf []byte, t time.Time, format string) []byte {
 					b = format[i]
 					if b <= '9' && '0' <= b {
 						width = width*10 + int(b&0x0F)
-						if width >= math.MaxInt/10 {
+						if width >= math.MinInt32/10 {
 							width = maxWidth
 						}
 					} else {
